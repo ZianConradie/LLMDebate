@@ -1,0 +1,58 @@
+# Voice choices
+#
+# Kokoro-82M English voices
+# American male:   am_adam, am_echo, am_eric, am_fenrir, am_liam, am_michael,
+#                  am_onyx, am_puck, am_santa
+# American female: af_heart, af_alloy, af_aoede, af_bella, af_jessica, af_kore,
+#                  af_nicole, af_nova, af_river, af_sarah, af_sky
+# British male:    bm_daniel, bm_fable, bm_george, bm_lewis
+# British female:  bf_alice, bf_emma, bf_isabella, bf_lily
+#
+# Pocket TTS English presets:
+# alba, anna, azelma, bill_boerst, caro_davy, charles, cosette, eponine, eve,
+# fantine, george, jane, jean, javert, marius, mary, michael, paul,
+# peter_yearsley, stuart_bell, vera
+# Other Pocket TTS presets: estelle (French), giovanni (Italian), juergen (German),
+# lola (Spanish), rafael (Portuguese)
+#
+# Pick one model below, then set each role's "voice" to a voice from that model.
+
+[debate]
+topic = "Which worldview is best: Christianity, Islam, or atheism?"
+argument_limit = 10
+argument_time = 60
+timeout_seconds = 300
+output_file = "debate.html"
+
+[api]
+base_url = "https://api.openai.com/v1"
+api_key_env = "OPENAI_API_KEY"
+model = "gpt-6-luna"
+effort = "high"
+# Set effort = "" if the compatible endpoint or model does not support reasoning effort.
+
+[tts]
+model = "pocket-tts"
+# Options: "kokoro", "pocket-tts", "chatterbox-nano"
+
+[[roles]]
+role = "Christian"
+color = "#c62828"
+voice = "anna"
+# For Chatterbox-Nano voice cloning only, you can set a clean WAV longer than 5 seconds.
+# Without it, Chatterbox-Nano uses its built-in default voice.
+# voice_reference = "voice_samples/christian.wav"
+
+[[roles]]
+role = "Islam"
+color = "#1565c0"
+voice = "paul"
+# For Chatterbox-Nano voice cloning only, you can set a clean WAV longer than 5 seconds.
+# Without it, Chatterbox-Nano uses its built-in default voice.
+# voice_reference = "voice_samples/muslim.wav"
+
+[[roles]]
+role = "Atheism"
+color = "#6a1b9a"
+voice = "vera"
+# Add more [[roles]] blocks to include more participants in each round.

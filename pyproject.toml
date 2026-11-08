@@ -1,0 +1,13 @@
+[project]
+name = "llmdebate"
+version = "0.1.0"
+description = "Multi-role AI debates with local text-to-speech and portable HTML transcripts."
+requires-python = ">=3.11"
+dependencies = [
+    "kokoro-onnx>=0.6.0",
+    "python-dotenv>=1.0.1",
+    "soundfile>=0.12.1",
+]
+
+[tool.uv]
+package = false
